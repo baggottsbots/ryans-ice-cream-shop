@@ -6,25 +6,25 @@
   
   
   <script src="https://cdn.tailwindcss.com"></script>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Han+Sans&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
 <!-- SEO Meta Tags -->
-<title>Ryan's Ice Cream Shop | Ultra-Premium Bluffton, SC Ice Cream Landing Page</title>
-<meta name="description" content="Luxury streetwear-inspired ice cream shop landing page for Ryan's Ice Cream Shop in Bluffton, SC featuring online ordering, catering packages, featured flavors, testimonials, FAQ, and contact details." />
-<meta property="og:title" content="Ryan's Ice Cream Shop | Ultra-Premium Bluffton, SC Ice Cream Landing Page" />
-<meta property="og:description" content="Luxury streetwear-inspired ice cream shop landing page for Ryan's Ice Cream Shop in Bluffton, SC featuring online ordering, catering packages, featured flavors, testimonials, FAQ, and contact details." />
+<title>Ryan's Ice Cream Shop Bluffton SC | Luxury Ice Cream, Catering &amp; Online Orders</title>
+<meta name="description" content="Ryan's Ice Cream Shop in Bluffton, SC delivers a premium streetwear-inspired ice cream experience with online ordering, catering packages, bold flavors, and local Lowcountry style." />
+<meta property="og:title" content="Ryan's Ice Cream Shop Bluffton SC | Luxury Ice Cream, Catering &amp; Online Orders" />
+<meta property="og:description" content="Ryan's Ice Cream Shop in Bluffton, SC delivers a premium streetwear-inspired ice cream experience with online ordering, catering packages, bold flavors, and local Lowcountry style." />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Ryan's Ice Cream Shop | Ultra-Premium Bluffton, SC Ice Cream Landing Page" />
-<meta name="twitter:description" content="Luxury streetwear-inspired ice cream shop landing page for Ryan's Ice Cream Shop in Bluffton, SC featuring online ordering, catering packages, featured flavors, testimonials, FAQ, and contact details." />
+<meta name="twitter:title" content="Ryan's Ice Cream Shop Bluffton SC | Luxury Ice Cream, Catering &amp; Online Orders" />
+<meta name="twitter:description" content="Ryan's Ice Cream Shop in Bluffton, SC delivers a premium streetwear-inspired ice cream experience with online ordering, catering packages, bold flavors, and local Lowcountry style." />
 <!-- End SEO Meta Tags -->
 
 <script data-gate>
 (function(){
-  var slug='J7yynjbGGq';var apiBase='https://paymegpt.com';var currency='USD';var presets=[2500,5000,10000,25000];var minAmt=100;var maxAmt=1000000;var thankYouMsg='Thank you for your generous donation!';
+  var slug='zkwSzQ86';var apiBase='https://paymegpt.com';var currency='USD';var presets=[2500,5000,10000,25000];var minAmt=100;var maxAmt=1000000;var thankYouMsg='Thank you for your generous donation!';
   function fmtD(c){return new Intl.NumberFormat('en-US',{style:'currency',currency:currency}).format(c/100);}
   window.__processDonation=function(amountCents,email,donorName,donorMessage){
     if(!amountCents||amountCents<minAmt){alert('Minimum donation is '+fmtD(minAmt));return Promise.reject('below_min');}
@@ -150,7 +150,7 @@
   function run(){
     if(contactId){
       var xhr=new XMLHttpRequest();
-      xhr.open('GET','https://paymegpt.com/api/landing/context/'+encodeURIComponent(contactId)+'?page_id=2684');
+      xhr.open('GET','https://paymegpt.com/api/landing/context/'+encodeURIComponent(contactId)+'?page_id=2685');
       xhr.onload=function(){
         if(xhr.status===200){
           try{
@@ -177,7 +177,7 @@
 </script>
 <script data-payment>
 (function(){
-  var slug='J7yynjbGGq';
+  var slug='zkwSzQ86';
   var apiBase='https://paymegpt.com';
   function findEmail(){
     var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
@@ -228,274 +228,295 @@
     }
   });
 })();
-</script>  <link rel="stylesheet" href="styles.css">
-</head>
-<body class="text-[#FFF8E7]">
-  <header id="top" class="sticky top-0 z-50 bg-[#0a0a0a]/90 backdrop-blur border-b border-white/10 transition-all">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-      <a href="#top" class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full bg-[#111] border border-[#d4af37]/50 grid place-items-center text-[#d4af37] text-xl shadow-[0_0_20px_rgba(212,175,55,.15)]">👑</div>
-        <div class="leading-none">
-          <div class="headline text-xl sm:text-3xl gold">Ryan's Ice Cream Shop</div>
-          <div class="text-[10px] tracking-[.35em] text-white/55 uppercase">Bluffton, SC</div>
+</script></head>
+<body class="bg-ink text-cream scroll-smooth overflow-x-hidden">
+<header class="sticky top-0 z-50 bg-ink/95 backdrop-blur border-b border-gold/20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
+    <a href="#home" class="flex items-center gap-3 font-bold tracking-wide text-cream">
+      <span class="text-2xl">👑</span>
+      <span class="text-lg sm:text-xl">Ryan's Ice Cream Shop</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-6 text-sm text-silver">
+      <a href="#home" class="hover:text-gold">Home</a>
+      <a href="#menu" class="hover:text-gold">Menu</a>
+      <a href="#order" class="hover:text-gold">Order Online</a>
+      <a href="#catering" class="hover:text-gold">Catering</a>
+      <a href="#about" class="hover:text-gold">About</a>
+      <a href="#contact" class="hover:text-gold">Contact</a>
+    </nav>
+    <a href="#order" class="px-4 py-2 rounded-full bg-gold text-ink font-bold hover:scale-105 transition">Order Now</a>
+  </div>
+</header>
+
+<main id="home">
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,175,55,.14),transparent_34%),linear-gradient(to_bottom,rgba(10,10,10,.55),rgba(10,10,10,1))]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-10 pb-20 relative">
+      <div class="flex flex-col gap-8 items-start">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold/30 bg-card/70 text-sm text-silver">
+          <span>📍</span><span>Bluffton, SC — Lowcountry's Finest</span>
         </div>
-      </a>
-      <nav class="hidden lg:flex items-center gap-7 text-sm uppercase tracking-[.25em] text-white/70">
-        <a href="#home" class="hover:text-[#d4af37]">Home</a>
-        <a href="#menu" class="hover:text-[#d4af37]">Menu</a>
-        <a href="#order" class="hover:text-[#d4af37]">Order Online</a>
-        <a href="#catering" class="hover:text-[#d4af37]">Catering</a>
-        <a href="#about" class="hover:text-[#d4af37]">About</a>
-        <a href="#contact" class="hover:text-[#d4af37]">Contact</a>
-      </nav>
-      <a href="#order" class="px-5 py-3 bg-[#d4af37] text-black font-bold uppercase tracking-[.25em] text-xs rounded-full hover:scale-105 transition">Order Now</a>
+        <div class="w-full relative">
+          <svg class="absolute -top-3 right-0 w-32 h-24 opacity-70" viewBox="0 0 200 140" fill="none" aria-hidden="true">
+            <path d="M30 15C65 8 134 8 170 15C176 57 170 88 149 117C128 138 71 138 50 117C29 88 23 57 30 15Z" fill="#D4AF37" opacity=".15"/>
+            <path d="M48 22C75 13 125 13 152 22C150 41 139 55 126 61C120 73 121 88 126 106C106 122 94 122 74 106C79 88 80 73 74 61C61 55 50 41 48 22Z" fill="#D4AF37" opacity=".26"/>
+          </svg>
+          <h1 class="font-display text-6xl sm:text-8xl lg:text-[9rem] leading-[.88] tracking-wide uppercase text-transparent bg-clip-text bg-gradient-to-b from-cream via-gold to-silver">
+            The Coldest Scoop in Bluffton
+          </h1>
+          <div class="mt-4 h-2 w-44 rounded-full bg-gradient-to-r from-gold via-cream to-transparent"></div>
+        </div>
+        <p class="max-w-2xl text-lg sm:text-2xl text-silver">
+          Lowcountry's Most Dripped-Out Ice Cream Experience
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#order" class="px-6 py-3 rounded-full bg-gold text-ink font-bold tracking-widest hover:scale-105 transition">ORDER ONLINE</a>
+          <a href="#menu" class="px-6 py-3 rounded-full border border-gold text-gold font-bold tracking-widest hover:bg-gold hover:text-ink transition">VIEW MENU</a>
+        </div>
+      </div>
+      <div class="mt-12 grid md:grid-cols-3 gap-4">
+        <div class="bg-card/80 border border-gold/20 rounded-3xl p-5 shadow-glow">
+          <p class="text-gold font-bold">Luxury Streetwear Energy</p><p class="text-silver mt-2">Dark, bold, and built like a statement piece.</p>
+        </div>
+        <div class="bg-card/80 border border-gold/20 rounded-3xl p-5 shadow-glow">
+          <p class="text-gold font-bold">Handcrafted in the Lowcountry</p><p class="text-silver mt-2">Premium scoops with serious flavor heat.</p>
+        </div>
+        <div class="bg-card/80 border border-gold/20 rounded-3xl p-5 shadow-glow">
+          <p class="text-gold font-bold">Online Ordering Ready</p><p class="text-silver mt-2">Pick up, deliver, or book the cart.</p>
+        </div>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section id="home" class="relative overflow-hidden border-b border-white/10">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,175,55,.16),transparent_32%),linear-gradient(180deg,#111,#0a0a0a_60%)]"></div>
-      <div class="absolute inset-0 opacity-40">
-        <div class="absolute left-10 top-24 w-24 h-24 rounded-full bg-[#d4af37]/20 blur-2xl floaty"></div>
-        <div class="absolute right-14 top-32 w-32 h-32 rounded-full bg-white/10 blur-3xl floaty" style="animation-delay:1.5s"></div>
-        <div class="absolute left-1/2 bottom-10 -translate-x-1/2 w-[520px] h-36 bg-[#d4af37]/10 blur-3xl rounded-full"></div>
-      </div>
-      <div class="max-w-7xl mx-auto px-4 py-24 sm:py-32 relative">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#d4af37]/40 bg-white/5 text-sm text-[#FFF8E7]/90">
-          <span class="text-[#d4af37]">📍</span> Bluffton, SC — Lowcountry's Finest
-        </div>
-        <div class="mt-8 max-w-5xl">
-          <h1 class="headline text-6xl sm:text-8xl lg:text-[7.5rem] leading-[.88] gold">THE COLDEST SCOOP IN BLUFFTON</h1>
-          <p class="mt-6 max-w-2xl text-lg sm:text-2xl text-white/75">Lowcountry's Most Dripped-Out Ice Cream Experience</p>
-          <div class="mt-10 flex flex-wrap gap-4">
-            <a href="#order" class="px-7 py-4 rounded-full bg-[#d4af37] text-black font-extrabold uppercase tracking-[.28em] text-xs sm:text-sm hover:scale-105 transition">ORDER ONLINE</a>
-            <a href="#menu" class="px-7 py-4 rounded-full border border-[#d4af37] text-[#d4af37] font-extrabold uppercase tracking-[.28em] text-xs sm:text-sm hover:bg-[#d4af37] hover:text-black transition">VIEW MENU</a>
-          </div>
-        </div>
-        <div class="mt-16 grid md:grid-cols-3 gap-4">
-          <div class="drip relative rounded-3xl bg-[#1a1a1a] border border-[#d4af37]/30 p-6 glow"><div class="text-[#d4af37] text-sm uppercase tracking-[.3em]">Signature</div><div class="headline text-4xl mt-2">Luxury Scoops</div><p class="text-white/65 mt-3">Premium blends, wild flavor, flawless finish.</p></div>
-          <div class="drip relative rounded-3xl bg-[#1a1a1a] border border-white/10 p-6 glow"><div class="text-[#c0c0c0] text-sm uppercase tracking-[.3em]">Energy</div><div class="headline text-4xl mt-2">Streetwear Vibe</div><p class="text-white/65 mt-3">Dark, bold, loud — like a drop day in the Lowcountry.</p></div>
-          <div class="drip relative rounded-3xl bg-[#1a1a1a] border border-[#d4af37]/30 p-6 glow"><div class="text-[#d4af37] text-sm uppercase tracking-[.3em]">Local</div><div class="headline text-4xl mt-2">Bluffton Born</div><p class="text-white/65 mt-3">Crafted in the Lowcountry with serious main-character energy.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="menu" class="max-w-7xl mx-auto px-4 py-20">
-      <div class="flex items-end justify-between gap-4 flex-wrap">
-        <div>
-          <div class="text-[#d4af37] uppercase tracking-[.35em] text-xs">The Lineup</div>
-          <h2 class="headline text-5xl sm:text-6xl mt-2">FEATURED FLAVORS</h2>
-        </div>
-        <div class="text-white/60 max-w-xl">Dark cards. Gold borders. Hover glow. Premium flavor drops engineered for Bluffton heat.</div>
-      </div>
-      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        <div class="flavor-card rounded-3xl p-6 bg-[#1a1a1a] border border-[#d4af37]/25 glow" data-name="Gold Rush" data-price="7.99">
-          <div class="flex items-start justify-between gap-4"><div><div class="headline text-3xl">Gold Rush</div><div class="text-white/60">Salted Caramel Swirl</div></div><div class="text-[#d4af37] text-2xl">$7.99</div></div>
-          <button class="add-btn mt-6 w-full py-3 rounded-full bg-[#d4af37] text-black font-bold uppercase tracking-[.24em] text-xs">Add to Cart</button>
-        </div>
-        <div class="flavor-card rounded-3xl p-6 bg-[#1a1a1a] border border-[#d4af37]/25 glow" data-name="Trap Garden" data-price="7.99">
-          <div class="flex items-start justify-between gap-4"><div><div class="headline text-3xl">Trap Garden</div><div class="text-white/60">Strawberry Basil</div></div><div class="text-[#d4af37] text-2xl">$7.99</div></div>
-          <button class="add-btn mt-6 w-full py-3 rounded-full bg-[#d4af37] text-black font-bold uppercase tracking-[.24em] text-xs">Add to Cart</button>
-        </div>
-        <div class="flavor-card rounded-3xl p-6 bg-[#1a1a1a] border border-[#d4af37]/25 glow" data-name="Lowcountry Mud" data-price="8.99">
-          <div class="flex items-start justify-between gap-4"><div><div class="headline text-3xl">Lowcountry Mud</div><div class="text-white/60">Chocolate Pecan Praline</div></div><div class="text-[#d4af37] text-2xl">$8.99</div></div>
-          <button class="add-btn mt-6 w-full py-3 rounded-full bg-[#d4af37] text-black font-bold uppercase tracking-[.24em] text-xs">Add to Cart</button>
-        </div>
-        <div class="flavor-card rounded-3xl p-6 bg-[#1a1a1a] border border-[#d4af37]/25 glow" data-name="Ice Ice Baby" data-price="7.99">
-          <div class="flex items-start justify-between gap-4"><div><div class="headline text-3xl">Ice Ice Baby</div><div class="text-white/60">Blue Raspberry Vanilla Bean</div></div><div class="text-[#d4af37] text-2xl">$7.99</div></div>
-          <button class="add-btn mt-6 w-full py-3 rounded-full bg-[#d4af37] text-black font-bold uppercase tracking-[.24em] text-xs">Add to Cart</button>
-        </div>
-        <div class="flavor-card rounded-3xl p-6 bg-[#1a1a1a] border border-[#d4af37]/25 glow" data-name="OG Vanilla" data-price="6.99">
-          <div class="flex items-start justify-between gap-4"><div><div class="headline text-3xl">OG Vanilla</div><div class="text-white/60">Madagascar Bourbon Vanilla</div></div><div class="text-[#d4af37] text-2xl">$6.99</div></div>
-          <button class="add-btn mt-6 w-full py-3 rounded-full bg-[#d4af37] text-black font-bold uppercase tracking-[.24em] text-xs">Add to Cart</button>
-        </div>
-        <div class="flavor-card rounded-3xl p-6 bg-[#1a1a1a] border border-[#d4af37]/25 glow" data-name="Bluffton Sunset" data-price="8.99">
-          <div class="flex items-start justify-between gap-4"><div><div class="headline text-3xl">Bluffton Sunset</div><div class="text-white/60">Peach Mango Sorbet</div></div><div class="text-[#d4af37] text-2xl">$8.99</div></div>
-          <button class="add-btn mt-6 w-full py-3 rounded-full bg-[#d4af37] text-black font-bold uppercase tracking-[.24em] text-xs">Add to Cart</button>
-        </div>
-      </div>
-    </section>
-
-    <section id="order" class="border-y border-white/10 bg-[#090909]">
-      <div class="max-w-7xl mx-auto px-4 py-20 grid lg:grid-cols-[1.2fr_.8fr] gap-8">
-        <div class="rounded-3xl bg-[#1a1a1a] border border-[#d4af37]/25 p-6 sm:p-8 glow">
-          <div class="flex items-center justify-between gap-4 flex-wrap">
-            <div>
-              <div class="text-[#d4af37] uppercase tracking-[.35em] text-xs">Order Online — We Deliver</div>
-              <h2 class="headline text-5xl mt-2">YOUR CART</h2>
-            </div>
-            <div class="flex items-center gap-2 bg-black/40 p-1 rounded-full border border-white/10">
-              <button class="orderType px-4 py-2 rounded-full bg-[#d4af37] text-black text-xs font-bold uppercase" data-type="Pickup">Pickup</button>
-              <button class="orderType px-4 py-2 rounded-full text-white/70 text-xs font-bold uppercase" data-type="Delivery">Delivery</button>
-            </div>
-          </div>
-          <div id="cartItems" class="mt-6 space-y-3"></div>
-          <div class="mt-6 grid sm:grid-cols-2 gap-4">
-            <div class="rounded-2xl bg-black/40 p-4 border border-white/10">
-              <div class="text-white/50 text-xs uppercase tracking-[.3em]">Subtotal</div>
-              <div id="subtotal" class="headline text-4xl mt-1">$0.00</div>
-            </div>
-            <div class="rounded-2xl bg-black/40 p-4 border border-white/10">
-              <div class="text-white/50 text-xs uppercase tracking-[.3em]">Delivery Zone</div>
-              <div class="mt-1 text-white/80">Serving all of Bluffton, Hilton Head & Sun City</div>
-            </div>
-          </div>
-          <div class="mt-6 grid md:grid-cols-[1fr_auto] gap-3">
-            <input id="email" type="email" placeholder="Email for checkout & updates" class="w-full rounded-2xl bg-black/40 border border-white/10 px-4 py-4 outline-none focus:border-[#d4af37] placeholder:text-white/30">
-            <button id="checkoutBtn" class="px-7 py-4 rounded-2xl bg-[#d4af37] text-black font-extrabold uppercase tracking-[.25em] text-xs">Checkout</button>
-          </div>
-          <p class="mt-4 text-white/55 text-sm">Full e-commerce coming soon — enter your email to be notified.</p>
-        </div>
-        <div class="rounded-3xl bg-[#1a1a1a] border border-[#d4af37]/25 p-6 sm:p-8">
-          <div class="text-[#d4af37] uppercase tracking-[.35em] text-xs">Quick Drop</div>
-          <h3 class="headline text-4xl mt-2">Sweet, Fast, Untouchable.</h3>
-          <div class="mt-5 space-y-4 text-white/75">
-            <div class="flex gap-3"><span class="text-[#d4af37]">◆</span><span>Cold chain perfection from scoop to doorstep.</span></div>
-            <div class="flex gap-3"><span class="text-[#d4af37]">◆</span><span>Premium packaging that looks like a luxury streetwear drop.</span></div>
-            <div class="flex gap-3"><span class="text-[#d4af37]">◆</span><span>Bluffton delivery built for late-night cravings and family celebrations.</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="catering" class="max-w-7xl mx-auto px-4 py-20">
-      <div class="text-center">
-        <div class="text-[#d4af37] uppercase tracking-[.35em] text-xs">Book The Cart</div>
-        <h2 class="headline text-5xl sm:text-6xl mt-2">CATERING FOR EVENTS, PARTIES & CORPORATE</h2>
-      </div>
-      <div class="mt-10 grid lg:grid-cols-3 gap-5">
-        <div class="rounded-3xl bg-[#1a1a1a] border border-white/10 p-6 glow">
-          <div class="headline text-4xl">The Scoop</div><div class="text-[#d4af37] text-3xl mt-1">$299</div>
-          <ul class="mt-4 space-y-2 text-white/72"><li>• 50 guest tastings</li><li>• 2 flavors + toppings</li><li>• Perfect for birthdays</li></ul>
-          <button class="bookBtn mt-6 w-full py-3 rounded-full bg-[#d4af37] text-black font-bold uppercase tracking-[.24em] text-xs" data-name="The Scoop" data-price="299">Book Now</button>
-        </div>
-        <div class="rounded-3xl bg-[#1a1a1a] border border-[#d4af37]/35 p-6 glow">
-          <div class="headline text-4xl">The Drip</div><div class="text-[#d4af37] text-3xl mt-1">$599</div>
-          <ul class="mt-4 space-y-2 text-white/72"><li>• 100 guest service</li><li>• 4 flavors + premium topping bar</li><li>• Best for weddings & brand activations</li></ul>
-          <button class="bookBtn mt-6 w-full py-3 rounded-full bg-[#d4af37] text-black font-bold uppercase tracking-[.24em] text-xs" data-name="The Drip" data-price="599">Book Now</button>
-        </div>
-        <div class="rounded-3xl bg-[#1a1a1a] border border-white/10 p-6 glow">
-          <div class="headline text-4xl">The Empire</div><div class="text-[#d4af37] text-3xl mt-1">$999+</div>
-          <ul class="mt-4 space-y-2 text-white/72"><li>• Custom menu & full cart takeover</li><li>• VIP service + branded setup</li><li>• Corporate, festivals & luxury events</li></ul>
-          <button class="bookBtn mt-6 w-full py-3 rounded-full bg-[#d4af37] text-black font-bold uppercase tracking-[.24em] text-xs" data-name="The Empire" data-price="999">Book Now</button>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="bg-[#0b0b0b] border-y border-white/10">
-      <div class="max-w-7xl mx-auto px-4 py-20 grid lg:grid-cols-[.95fr_1.05fr] gap-10 items-center">
-        <div>
-          <div class="text-[#d4af37] uppercase tracking-[.35em] text-xs">We Ain't Playin' Around</div>
-          <h2 class="headline text-5xl sm:text-6xl mt-2">HANDCRAFTED IN BLUFFTON. BUILT FOR THE LOWCOUNTRY.</h2>
-          <p class="mt-5 text-white/72 leading-relaxed">Ryan's Ice Cream Shop brings together handcrafted premium ice cream, local inspiration, and a bold luxury-streetwear identity. Every scoop is made to feel like a limited edition drop — rich, clean, unforgettable.</p>
-          <div class="mt-6 grid grid-cols-2 gap-4">
-            <div class="rounded-2xl bg-[#1a1a1a] border border-white/10 p-4"><div class="headline text-4xl text-[#d4af37]">20+</div><div class="text-white/60 uppercase text-xs tracking-[.25em]">Flavors</div></div>
-            <div class="rounded-2xl bg-[#1a1a1a] border border-white/10 p-4"><div class="headline text-4xl text-[#d4af37]">5★</div><div class="text-white/60 uppercase text-xs tracking-[.25em]">Rated</div></div>
-            <div class="rounded-2xl bg-[#1a1a1a] border border-white/10 p-4"><div class="headline text-4xl text-[#d4af37]">100%</div><div class="text-white/60 uppercase text-xs tracking-[.25em]">Locally Owned</div></div>
-            <div class="rounded-2xl bg-[#1a1a1a] border border-white/10 p-4"><div class="headline text-4xl text-[#d4af37]">BLF</div><div class="text-white/60 uppercase text-xs tracking-[.25em]">Bluffton Born</div></div>
-          </div>
-        </div>
-        <div class="relative rounded-3xl overflow-hidden border border-[#d4af37]/25 bg-gradient-to-br from-[#1a1a1a] to-black p-8">
-          <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(212,175,55,.18),transparent_35%)]"></div>
-          <div class="relative">
-            <div class="headline text-6xl text-[#d4af37]">LOCAL INGREDIENTS</div>
-            <p class="mt-4 text-white/72">We keep it premium, we keep it fresh, and we keep it rooted in the Bluffton vibe — from seasonal fruit to rich vanilla and wild Lowcountry pairings.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="max-w-7xl mx-auto px-4 py-20">
-      <div class="text-center">
-        <div class="text-[#d4af37] uppercase tracking-[.35em] text-xs">Testimonials</div>
-        <h2 class="headline text-5xl mt-2">THE HYPE IS REAL</h2>
-      </div>
-      <div class="mt-10 grid md:grid-cols-3 gap-5">
-        <div class="rounded-3xl bg-[#1a1a1a] border border-white/10 p-6 glow">
-          <div class="text-[#d4af37] text-xl">★★★★★</div>
-          <p class="mt-4 text-white/78">“This is not just ice cream — it’s a whole vibe. The Gold Rush flavor is dangerous.”</p>
-          <div class="mt-4 text-white/55 text-sm uppercase tracking-[.25em]">— Jamal R.</div>
-        </div>
-        <div class="rounded-3xl bg-[#1a1a1a] border border-white/10 p-6 glow">
-          <div class="text-[#d4af37] text-xl">★★★★★</div>
-          <p class="mt-4 text-white/78">“Luxury packaging, crazy flavors, and the Bluffton delivery came fast. Absolutely elite.”</p>
-          <div class="mt-4 text-white/55 text-sm uppercase tracking-[.25em]">— Tasha M.</div>
-        </div>
-        <div class="rounded-3xl bg-[#1a1a1a] border border-white/10 p-6 glow">
-          <div class="text-[#d4af37] text-xl">★★★★★</div>
-          <p class="mt-4 text-white/78">“Best catering setup we’ve ever booked. It looked like a high-end brand activation.”</p>
-          <div class="mt-4 text-white/55 text-sm uppercase tracking-[.25em]">— Brandon L.</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="max-w-7xl mx-auto px-4 py-20">
-      <div class="grid lg:grid-cols-2 gap-6 items-start">
-        <div>
-          <div class="text-[#d4af37] uppercase tracking-[.35em] text-xs">FAQ</div>
-          <h2 class="headline text-5xl mt-2">NEED THE DETAILS?</h2>
-        </div>
-        <div class="space-y-4">
-          <details class="rounded-2xl bg-[#1a1a1a] border border-white/10 p-5"><summary class="cursor-pointer font-bold">Do you deliver in Bluffton?</summary><p class="mt-3 text-white/70">Yes — we serve all of Bluffton, plus Hilton Head and Sun City.</p></details>
-          <details class="rounded-2xl bg-[#1a1a1a] border border-white/10 p-5"><summary class="cursor-pointer font-bold">Can I book catering for private events?</summary><p class="mt-3 text-white/70">Absolutely. Our catering tiers are built for parties, weddings, and corporate events.</p></details>
-          <details class="rounded-2xl bg-[#1a1a1a] border border-white/10 p-5"><summary class="cursor-pointer font-bold">Are the prices shown the exact charge?</summary><p class="mt-3 text-white/70">Yes. Prices shown in dollars are what customers see, and the payment call converts with Math.round(price * 100) at the point of charge.</p></details>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="border-t border-white/10 bg-[#090909]">
-      <div class="max-w-7xl mx-auto px-4 py-20 grid lg:grid-cols-[1fr_.9fr] gap-8">
-        <div class="rounded-3xl bg-[#1a1a1a] border border-[#d4af37]/25 p-6 sm:p-8">
-          <div class="text-[#d4af37] uppercase tracking-[.35em] text-xs">Contact</div>
-          <h2 class="headline text-5xl mt-2">DROP US A LINE</h2>
-          <div class="mt-6 grid sm:grid-cols-2 gap-4">
-            <input class="rounded-2xl bg-black/40 border border-white/10 px-4 py-4 outline-none focus:border-[#d4af37] placeholder:text-white/30" placeholder="Name">
-            <input class="rounded-2xl bg-black/40 border border-white/10 px-4 py-4 outline-none focus:border-[#d4af37] placeholder:text-white/30" placeholder="Email">
-            <input class="sm:col-span-2 rounded-2xl bg-black/40 border border-white/10 px-4 py-4 outline-none focus:border-[#d4af37] placeholder:text-white/30" placeholder="Message">
-          </div>
-          <button class="mt-4 px-7 py-4 rounded-2xl bg-[#d4af37] text-black font-extrabold uppercase tracking-[.25em] text-xs">Send Message</button>
-        </div>
-        <div class="rounded-3xl bg-[#1a1a1a] border border-white/10 p-6 sm:p-8">
-          <div class="headline text-4xl">VISIT US</div>
-          <div class="mt-4 space-y-3 text-white/72">
-            <div>Bluffton, SC 29910</div>
-            <div>Mon-Sat 11am-10pm</div>
-            <div>Sun 12pm-9pm</div>
-            <div class="pt-3 text-[#d4af37]">The Coldest in the Lowcountry</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-white/10 bg-black">
-    <div class="max-w-7xl mx-auto px-4 py-12 grid lg:grid-cols-[1.2fr_.8fr] gap-8">
+  <section id="menu" class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+    <div class="flex items-end justify-between gap-4 mb-8">
       <div>
-        <div class="flex items-center gap-3">
-          <div class="w-11 h-11 rounded-full bg-[#111] border border-[#d4af37]/50 grid place-items-center text-[#d4af37] text-xl">👑</div>
+        <p class="text-gold uppercase tracking-[.3em] text-sm">The Lineup</p>
+        <h2 class="font-display text-5xl sm:text-6xl uppercase">Flavor Royalty</h2>
+      </div>
+      <p class="hidden md:block text-silver max-w-md">Real photos. Real flavor. Real Bluffton drip.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
+      <article class="bg-card border border-gold/25 rounded-3xl overflow-hidden shadow-glow hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(212,175,55,.22)] transition">
+        <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=600&q=80" alt="Gold Rush Salted Caramel" class="h-[220px] w-full object-cover">
+        <div class="p-5">
+          <h3 class="font-display text-4xl text-gold uppercase">Gold Rush</h3>
+          <p class="italic text-cream/90 mt-2">Salted caramel with crown-level swagger.</p>
+          <div class="mt-4 flex items-center justify-between"><span class="text-2xl font-bold">$7.99</span><button class="add-btn px-4 py-2 rounded-full bg-gold text-ink font-bold" data-name="Gold Rush" data-price="7.99">Add to Cart</button></div>
+        </div>
+      </article>
+      <article class="bg-card border border-gold/25 rounded-3xl overflow-hidden shadow-glow hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(212,175,55,.22)] transition">
+        <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=600&q=80" alt="Trap Garden Strawberry" class="h-[220px] w-full object-cover">
+        <div class="p-5">
+          <h3 class="font-display text-4xl text-gold uppercase">Trap Garden</h3>
+          <p class="italic text-cream/90 mt-2">Strawberry so fresh it hits like a summer flex.</p>
+          <div class="mt-4 flex items-center justify-between"><span class="text-2xl font-bold">$8.99</span><button class="add-btn px-4 py-2 rounded-full bg-gold text-ink font-bold" data-name="Trap Garden" data-price="8.99">Add to Cart</button></div>
+        </div>
+      </article>
+      <article class="bg-card border border-gold/25 rounded-3xl overflow-hidden shadow-glow hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(212,175,55,.22)] transition">
+        <img src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=600&q=80" alt="Lowcountry Mud Chocolate" class="h-[220px] w-full object-cover">
+        <div class="p-5">
+          <h3 class="font-display text-4xl text-gold uppercase">Lowcountry Mud</h3>
+          <p class="italic text-cream/90 mt-2">Dark chocolate with deep, rich, coastal energy.</p>
+          <div class="mt-4 flex items-center justify-between"><span class="text-2xl font-bold">$6.99</span><button class="add-btn px-4 py-2 rounded-full bg-gold text-ink font-bold" data-name="Lowcountry Mud" data-price="6.99">Add to Cart</button></div>
+        </div>
+      </article>
+      <article class="bg-card border border-gold/25 rounded-3xl overflow-hidden shadow-glow hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(212,175,55,.22)] transition">
+        <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=600&q=80" alt="Ice Ice Baby Blue Raspberry" class="h-[220px] w-full object-cover">
+        <div class="p-5">
+          <h3 class="font-display text-4xl text-gold uppercase">Ice Ice Baby</h3>
+          <p class="italic text-cream/90 mt-2">Blue raspberry with icy chrome attitude.</p>
+          <div class="mt-4 flex items-center justify-between"><span class="text-2xl font-bold">$7.49</span><button class="add-btn px-4 py-2 rounded-full bg-gold text-ink font-bold" data-name="Ice Ice Baby" data-price="7.49">Add to Cart</button></div>
+        </div>
+      </article>
+      <article class="bg-card border border-gold/25 rounded-3xl overflow-hidden shadow-glow hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(212,175,55,.22)] transition">
+        <img src="https://images.unsplash.com/photo-1567206563114-c179706c1adf?w=600&q=80" alt="OG Vanilla" class="h-[220px] w-full object-cover">
+        <div class="p-5">
+          <h3 class="font-display text-4xl text-gold uppercase">OG Vanilla</h3>
+          <p class="italic text-cream/90 mt-2">Classic, clean, and forever undefeated.</p>
+          <div class="mt-4 flex items-center justify-between"><span class="text-2xl font-bold">$5.99</span><button class="add-btn px-4 py-2 rounded-full bg-gold text-ink font-bold" data-name="OG Vanilla" data-price="5.99">Add to Cart</button></div>
+        </div>
+      </article>
+      <article class="bg-card border border-gold/25 rounded-3xl overflow-hidden shadow-glow hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(212,175,55,.22)] transition">
+        <img src="https://images.unsplash.com/photo-1488900128323-21503983a07e?w=600&q=80" alt="Bluffton Sunset Peach Mango" class="h-[220px] w-full object-cover">
+        <div class="p-5">
+          <h3 class="font-display text-4xl text-gold uppercase">Bluffton Sunset</h3>
+          <p class="italic text-cream/90 mt-2">Peach mango with Lowcountry sunset heat.</p>
+          <div class="mt-4 flex items-center justify-between"><span class="text-2xl font-bold">$7.99</span><button class="add-btn px-4 py-2 rounded-full bg-gold text-ink font-bold" data-name="Bluffton Sunset" data-price="7.99">Add to Cart</button></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="order" class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+    <div class="grid lg:grid-cols-5 gap-8">
+      <div class="lg:col-span-3 bg-card border border-gold/25 rounded-3xl p-6 shadow-glow">
+        <div class="flex items-center justify-between mb-6">
           <div>
-            <div class="headline text-3xl gold">Ryan's Ice Cream Shop</div>
-            <div class="text-white/55 uppercase tracking-[.3em] text-[10px]">The Coldest in the Lowcountry</div>
+            <p class="text-gold uppercase tracking-[.3em] text-sm">Order Online</p>
+            <h2 class="font-display text-5xl uppercase">Cart Mode</h2>
+          </div>
+          <div class="flex items-center gap-2 text-silver">
+            <span class="text-gold">📦</span><span>Serving Bluffton, Hilton Head & Sun City</span>
           </div>
         </div>
-        <p class="mt-4 text-white/60 max-w-md">Ultra-premium ice cream with Bluffton soul and luxury streetwear attitude.</p>
-        <div class="mt-5 flex gap-3 text-xl">
-          <a href="#" class="w-10 h-10 rounded-full border border-white/10 grid place-items-center hover:border-[#d4af37]">f</a>
-          <a href="#" class="w-10 h-10 rounded-full border border-white/10 grid place-items-center hover:border-[#d4af37]">ig</a>
-          <a href="#" class="w-10 h-10 rounded-full border border-white/10 grid place-items-center hover:border-[#d4af37]">x</a>
+        <div class="flex items-center gap-3 mb-5">
+          <button class="toggle px-4 py-2 rounded-full bg-gold text-ink font-bold" data-mode="Pickup">Pickup</button>
+          <button class="toggle px-4 py-2 rounded-full border border-gold text-gold font-bold" data-mode="Delivery">Delivery</button>
+          <span id="modeLabel" class="ml-auto text-silver">Pickup selected</span>
+        </div>
+        <div id="cartList" class="space-y-3"></div>
+        <div class="mt-6 p-4 rounded-2xl bg-ink border border-gold/20">
+          <div class="flex items-center justify-between text-lg"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+          <div class="flex flex-col sm:flex-row gap-3 mt-4">
+            <input id="orderName" placeholder="Name" class="flex-1 px-4 py-3 rounded-full bg-card border border-gold/20 outline-none focus:border-gold">
+            <input id="orderEmail" type="email" placeholder="Email" class="flex-1 px-4 py-3 rounded-full bg-card border border-gold/20 outline-none focus:border-gold">
+          </div>
+          <button id="checkoutBtn" class="mt-4 w-full px-5 py-3 rounded-full bg-gold text-ink font-extrabold tracking-widest">CHECKOUT</button>
+          <p class="text-xs text-silver mt-3">Payment processed securely at checkout.</p>
         </div>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-sm">
-        <div><div class="text-[#d4af37] uppercase tracking-[.3em] text-xs">Menu</div><div class="mt-3 space-y-2 text-white/65"><div>Flavors</div><div>Seasonal Drops</div><div>Toppings</div></div></div>
-        <div><div class="text-[#d4af37] uppercase tracking-[.3em] text-xs">Order</div><div class="mt-3 space-y-2 text-white/65"><div>Pickup</div><div>Delivery</div><div>Checkout</div></div></div>
-        <div><div class="text-[#d4af37] uppercase tracking-[.3em] text-xs">Catering</div><div class="mt-3 space-y-2 text-white/65"><div>The Scoop</div><div>The Drip</div><div>The Empire</div></div></div>
-        <div><div class="text-[#d4af37] uppercase tracking-[.3em] text-xs">About/Contact</div><div class="mt-3 space-y-2 text-white/65"><div>Bluffton, SC 29910</div><div>Mon-Sat 11am-10pm</div><div>Sun 12pm-9pm</div></div></div>
+      <div class="lg:col-span-2 space-y-6">
+        <div class="bg-card border border-gold/25 rounded-3xl p-6">
+          <h3 class="font-display text-4xl uppercase">Launch Alerts</h3>
+          <p class="text-silver mt-2">Join the list for drops, new flavors, and limited merch.</p>
+          <input id="launchEmail" type="email" placeholder="Email address" class="mt-4 w-full px-4 py-3 rounded-full bg-ink border border-gold/20 outline-none focus:border-gold">
+          <button class="mt-4 w-full px-5 py-3 rounded-full border border-gold text-gold font-bold">Notify Me</button>
+        </div>
+        <div class="bg-card border border-gold/25 rounded-3xl p-6">
+          <p class="text-gold font-bold uppercase tracking-[.25em]">Hours</p>
+          <p class="mt-3 text-silver">Mon-Sat 11am-10pm</p>
+          <p class="text-silver">Sun 12pm-9pm</p>
+          <p class="mt-4 text-cream">Bluffton, SC 29910</p>
+        </div>
       </div>
     </div>
-    <div class="border-t border-white/10 py-4 text-center text-white/45 text-sm">© 2025 Ryan's Ice Cream Shop. All Rights Reserved.</div>
-  </footer>
+  </section>
 
-  
+  <section id="catering" class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+    <div class="mb-10">
+      <p class="text-gold uppercase tracking-[.3em] text-sm">Book the Cart</p>
+      <h2 class="font-display text-5xl sm:text-6xl uppercase">Catering Royalty</h2>
+    </div>
+    <div class="grid lg:grid-cols-3 gap-6">
+      <div class="bg-card border border-gold/25 rounded-3xl p-6 shadow-glow">
+        <h3 class="font-display text-4xl text-gold uppercase">The Scoop</h3>
+        <p class="text-3xl mt-2 font-bold">$299</p>
+        <p class="text-silver mt-3">Up to 50 guests, 4 flavors, 2 hours.</p>
+        <div class="mt-4 flex gap-2"><input id="scoopEmail" type="email" placeholder="Email" class="flex-1 px-4 py-3 rounded-full bg-ink border border-gold/20"><input id="scoopName" placeholder="Name" class="flex-1 px-4 py-3 rounded-full bg-ink border border-gold/20"></div>
+        <button class="bookBtn mt-4 w-full px-5 py-3 rounded-full bg-gold text-ink font-bold" data-name="The Scoop" data-price="299">Book Now</button>
+      </div>
+      <div class="bg-card border border-gold/25 rounded-3xl p-6 shadow-glow">
+        <h3 class="font-display text-4xl text-gold uppercase">The Drip</h3>
+        <p class="text-3xl mt-2 font-bold">$599</p>
+        <p class="text-silver mt-3">Up to 150 guests, 8 flavors, 3 hours, toppings bar.</p>
+        <div class="mt-4 flex gap-2"><input id="dripEmail" type="email" placeholder="Email" class="flex-1 px-4 py-3 rounded-full bg-ink border border-gold/20"><input id="dripName" placeholder="Name" class="flex-1 px-4 py-3 rounded-full bg-ink border border-gold/20"></div>
+        <button class="bookBtn mt-4 w-full px-5 py-3 rounded-full bg-gold text-ink font-bold" data-name="The Drip" data-price="599">Book Now</button>
+      </div>
+      <div class="bg-card border border-gold/25 rounded-3xl p-6 shadow-glow">
+        <h3 class="font-display text-4xl text-gold uppercase">The Empire</h3>
+        <p class="text-3xl mt-2 font-bold">$9.99</p>
+        <p class="text-silver mt-3">Unlimited guests, full flavor menu, 5 hours, custom branding.</p>
+        <div class="mt-4 flex gap-2"><input id="empireEmail" type="email" placeholder="Email" class="flex-1 px-4 py-3 rounded-full bg-ink border border-gold/20"><input id="empireName" placeholder="Name" class="flex-1 px-4 py-3 rounded-full bg-ink border border-gold/20"></div>
+        <button class="bookBtn mt-4 w-full px-5 py-3 rounded-full bg-gold text-ink font-bold" data-name="The Empire" data-price="9.99">Book Now</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+    <div class="grid lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <p class="text-gold uppercase tracking-[.3em] text-sm">About</p>
+        <h2 class="font-display text-5xl sm:text-6xl uppercase">We Ain't Playin' Around</h2>
+        <p class="text-silver mt-4 max-w-xl">Ryan's Ice Cream Shop is Bluffton-born and built on premium ingredients, big flavor, and a vibe that feels equal parts luxury streetwear and classic ice cream shop nostalgia. We serve loud flavors, clean finishes, and unforgettable energy from the first scoop to the last spoonful.</p>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-card border border-gold/25 rounded-3xl p-6 text-center"><p class="font-display text-5xl text-gold">20+</p><p class="text-silver mt-2">Flavors</p></div>
+        <div class="bg-card border border-gold/25 rounded-3xl p-6 text-center"><p class="font-display text-5xl text-gold">5★</p><p class="text-silver mt-2">Rated</p></div>
+        <div class="bg-card border border-gold/25 rounded-3xl p-6 text-center"><p class="font-display text-5xl text-gold">100%</p><p class="text-silver mt-2">Locally Owned</p></div>
+        <div class="bg-card border border-gold/25 rounded-3xl p-6 text-center"><p class="font-display text-5xl text-gold">SC</p><p class="text-silver mt-2">Bluffton Born</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+    <div class="mb-8">
+      <p class="text-gold uppercase tracking-[.3em] text-sm">Testimonials</p>
+      <h2 class="font-display text-5xl uppercase">The Streets Approve</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-card border border-gold/25 rounded-3xl p-6">
+        <div class="text-gold text-xl">★★★★★</div>
+        <p class="mt-3 text-cream italic">"This is the coldest, cleanest scoop game in Bluffton. The vibe is insane."</p>
+        <p class="mt-4 text-silver">— Jay M.</p>
+      </div>
+      <div class="bg-card border border-gold/25 rounded-3xl p-6">
+        <div class="text-gold text-xl">★★★★★</div>
+        <p class="mt-3 text-cream italic">"I came for the ice cream, stayed for the drip. Gold Rush is legendary."</p>
+        <p class="mt-4 text-silver">— Tasha R.</p>
+      </div>
+      <div class="bg-card border border-gold/25 rounded-3xl p-6">
+        <div class="text-gold text-xl">★★★★★</div>
+        <p class="mt-3 text-cream italic">"Booked catering for my event and the whole crew was obsessed. Luxury."</p>
+        <p class="mt-4 text-silver">— Marcus L.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+    <div class="bg-card border border-gold/25 rounded-3xl p-8 lg:p-10 shadow-glow">
+      <div class="grid lg:grid-cols-2 gap-8">
+        <div>
+          <p class="text-gold uppercase tracking-[.3em] text-sm">Contact</p>
+          <h2 class="font-display text-5xl uppercase">Pull Up or Hit Us</h2>
+          <p class="text-silver mt-4">Bluffton, SC 29910</p>
+          <p class="text-silver">Mon-Sat 11am-10pm | Sun 12pm-9pm</p>
+        </div>
+        <form class="grid sm:grid-cols-2 gap-4">
+          <input class="px-4 py-3 rounded-full bg-ink border border-gold/20" placeholder="Name">
+          <input class="px-4 py-3 rounded-full bg-ink border border-gold/20" placeholder="Email">
+          <input class="sm:col-span-2 px-4 py-3 rounded-full bg-ink border border-gold/20" placeholder="Phone">
+          <textarea class="sm:col-span-2 px-4 py-3 rounded-3xl bg-ink border border-gold/20 min-h-32" placeholder="Your message"></textarea>
+          <button type="button" class="sm:col-span-2 px-5 py-3 rounded-full bg-gold text-ink font-bold">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-gold/20 bg-[#070707]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid md:grid-cols-4 gap-8">
+    <div>
+      <div class="flex items-center gap-3 font-bold text-cream"><span class="text-2xl">👑</span><span>Ryan's Ice Cream Shop</span></div>
+      <p class="mt-3 text-silver">The Coldest in the Lowcountry</p>
+      <p class="mt-3 text-silver">Bluffton, SC 29910</p>
+    </div>
+    <div>
+      <p class="text-gold font-bold uppercase tracking-[.2em]">Shop</p>
+      <ul class="mt-3 space-y-2 text-silver">
+        <li><a href="#menu" class="hover:text-gold">Menu</a></li>
+        <li><a href="#order" class="hover:text-gold">Order Online</a></li>
+        <li><a href="#catering" class="hover:text-gold">Catering</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-gold font-bold uppercase tracking-[.2em]">Info</p>
+      <ul class="mt-3 space-y-2 text-silver">
+        <li><a href="#about" class="hover:text-gold">About</a></li>
+        <li><a href="#contact" class="hover:text-gold">Contact</a></li>
+        <li>Mon-Sat 11am-10pm</li>
+        <li>Sun 12pm-9pm</li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-gold font-bold uppercase tracking-[.2em]">Connect</p>
+      <p class="mt-3 text-silver">Limited drops. Big scoops. No weak flavors.</p>
+    </div>
+  </div>
+  <div class="border-t border-gold/10 py-4 text-center text-silver text-sm">© 2025 Ryan's Ice Cream Shop. All Rights Reserved.</div>
+</footer>
+
+
   <script src="script.js"></script>
 </body>
 </html>
