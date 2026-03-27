@@ -1,20 +1,51 @@
-const cart=[], orderState={type:'Pickup'};
-    const money=n=>'$'+n.toFixed(2);
-    const itemsEl=document.getElementById('cartItems'), subtotalEl=document.getElementById('subtotal');
-    function renderCart(){
-      itemsEl.innerHTML=cart.length?cart.map((i,idx)=>`<div class="flex items-center justify-between gap-3 rounded-2xl bg-black/35 border border-white/10 p-4"><div><div class="font-bold">${i.name}</div><div class="text-white/50 text-sm">${money(i.price)} each</div></div><div class="flex items-center gap-2"><button class="qty-btn w-8 h-8 rounded-full bg-white/10" data-idx="${idx}" data-d="-1">−</button><div class="min-w-8 text-center">${i.qty}</div><button class="qty-btn w-8 h-8 rounded-full bg-white/10" data-idx="${idx}" data-d="1">+</button><div class="w-24 text-right font-bold">${money(i.price*i.qty)}</div></div></div>`).join(''):'<div class="text-white/50 py-10 text-center border border-dashed border-white/10 rounded-2xl">Your cart is empty. Add a few dripped flavors.</div>';
-      const subtotal=cart.reduce((s,i)=>s+i.price*i.qty,0);
-      subtotalEl.textContent=money(subtotal);
-    }
-    document.querySelectorAll('.add-btn').forEach(btn=>btn.onclick=()=>{const c=btn.closest('.flavor-card');const name=c.dataset.name,price=parseFloat(c.dataset.price);const ex=cart.find(i=>i.name===name);ex?ex.qty++:cart.push({name,price,qty:1});renderCart()});
-    itemsEl.addEventListener('click',e=>{if(!e.target.classList.contains('qty-btn')) return;const idx=+e.target.dataset.idx;cart[idx].qty+=+e.target.dataset.d;if(cart[idx].qty<=0) cart.splice(idx,1);renderCart()});
-    document.querySelectorAll('.orderType').forEach(b=>b.onclick=()=>{document.querySelectorAll('.orderType').forEach(x=>x.className='orderType px-4 py-2 rounded-full text-white/70 text-xs font-bold uppercase');b.className='orderType px-4 py-2 rounded-full bg-[#d4af37] text-black text-xs font-bold uppercase';orderState.type=b.dataset.type;});
-    document.getElementById('checkoutBtn').onclick=async()=>{
-      if(!cart.length) return alert('Add items to your cart first.');
-      const email=document.getElementById('email').value.trim(); if(!email) return alert('Enter your email to continue.');
-      const subtotal=cart.reduce((s,i)=>s+i.price*i.qty,0);
-      if(window.__processPayment){ await window.__processPayment({amountCents:Math.round(subtotal*100),email,productName:`Ryan's Ice Cream Shop Order (${orderState.type})`,productDescription:cart.map(i=>`${i.qty}x ${i.name}`).join(', '),name:'',quantity:1}); }
-      else alert('Payment system unavailable.');
-    };
-    document.querySelectorAll('.bookBtn').forEach(btn=>btn.onclick=async()=>{const price=parseFloat(btn.dataset.price),email=prompt('Enter your email to book catering:'); if(!email) return; if(window.__processPayment){ await window.__processPayment({amountCents:Math.round(price*100),email,productName:`Ryan's Ice Cream Shop Catering - ${btn.dataset.name}`,productDescription:`Catering package: ${btn.dataset.name}`,name:'',quantity:1}); }});
-    renderCart();
+tailwind.config = { theme: { extend: { fontFamily: { display: ['"Bebas Neue"', 'sans-serif'] }, colors: { gold:'#D4AF37', silver:'#C0C0C0', cream:'#FFF8E7', ink:'#0a0a0a', card:'#1a1a1a' }, boxShadow: { glow:'0 0 0 1px rgba(212,175,55,.25), 0 0 35px rgba(212,175,55,.16)' } } } }
+
+const cart = [];
+let mode = 'Pickup';
+const cartList = document.getElementById('cartList');
+const subtotalEl = document.getElementById('subtotal');
+const modeLabel = document.getElementById('modeLabel');
+const fmt = n => '$' + n.toFixed(2);
+
+function renderCart(){
+  cartList.innerHTML = cart.length ? cart.map((it,i)=>`
+    <div class="flex items-center justify-between gap-4 p-4 rounded-2xl bg-ink border border-gold/15">
+      <div>
+        <div class="font-bold text-cream">${it.name}</div>
+        <div class="text-silver text-sm">${fmt(it.price)} each</div>
+      </div>
+      <div class="flex items-center gap-2">
+        <button class="qty px-3 py-1 rounded-full border border-gold/20" data-i="${i}" data-d="-1">-</button>
+        <span class="min-w-8 text-center">${it.qty}</span>
+        <button class="qty px-3 py-1 rounded-full border border-gold/20" data-i="${i}" data-d="1">+</button>
+      </div>
+      <div class="w-20 text-right font-bold">${fmt(it.price*it.qty)}</div>
+    </div>`).join('') : '<div class="text-silver p-6 text-center border border-dashed border-gold/20 rounded-2xl">Your cart is empty. Add a scoop and start the drip.</div>';
+  const sub = cart.reduce((s,it)=>s + it.price*it.qty,0);
+  subtotalEl.textContent = fmt(sub);
+}
+document.addEventListener('click', e=>{
+  const add = e.target.closest('.add-btn');
+  if(add){ cart.push({name:add.dataset.name, price:+add.dataset.price, qty:1}); renderCart(); }
+  const q = e.target.closest('.qty');
+  if(q){ const i=+q.dataset.i; cart[i].qty += +q.dataset.d; if(cart[i].qty<=0) cart.splice(i,1); renderCart(); }
+  if(e.target.closest('.toggle')){
+    mode = e.target.dataset.mode;
+    document.querySelectorAll('.toggle').forEach(b=>{ b.className = 'toggle px-4 py-2 rounded-full font-bold ' + (b.dataset.mode===mode ? 'bg-gold text-ink' : 'border border-gold text-gold'); });
+    modeLabel.textContent = mode + ' selected';
+  }
+  const book = e.target.closest('.bookBtn');
+  if(book){
+    const email = document.getElementById(book.dataset.name.toLowerCase().replace(/\s+/g,'') + 'Email')?.value || document.querySelector('#orderEmail')?.value || '';
+    const name = document.getElementById(book.dataset.name.toLowerCase().replace(/\s+/g,'') + 'Name')?.value || document.querySelector('#orderName')?.value || '';
+    window.__processPayment({ amountCents: Math.round(parseFloat(book.dataset.price) * 100), email, name, productName: book.dataset.name, productDescription: book.dataset.name + ' catering package', quantity: 1 });
+  }
+});
+document.getElementById('checkoutBtn').addEventListener('click', ()=>{
+  const sub = cart.reduce((s,it)=>s + it.price*it.qty,0);
+  if(!cart.length) return alert('Add items to your cart first.');
+  const email = document.getElementById('orderEmail').value.trim();
+  const name = document.getElementById('orderName').value.trim();
+  window.__processPayment({ amountCents: Math.round(sub * 100), email, name, productName: "Ryan's Ice Cream Shop Order", productDescription: mode + ' order from Bluffton, SC', quantity: 1 });
+});
+renderCart();
