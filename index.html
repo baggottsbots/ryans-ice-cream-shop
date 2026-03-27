@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- SEO Meta Tags -->
+<title>Ryan's Ice Cream Shop - Coldest Premium Scoops Bluffton SC Lowcountry</title>
+<meta name="description" content="Gangster luxury ice cream in Bluffton SC. Gold Rush, Lowcountry Mud, premium flavors with delivery &amp; catering. Experience Lowcountry's coldest scoops." />
+<meta property="og:title" content="Ryan's Ice Cream Shop - Coldest Premium Scoops Bluffton SC Lowcountry" />
+<meta property="og:description" content="Gangster luxury ice cream in Bluffton SC. Gold Rush, Lowcountry Mud, premium flavors with delivery &amp; catering. Experience Lowcountry's coldest scoops." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ryan's Ice Cream Shop - Coldest Premium Scoops Bluffton SC Lowcountry" />
+<meta name="twitter:description" content="Gangster luxury ice cream in Bluffton SC. Gold Rush, Lowcountry Mud, premium flavors with delivery &amp; catering. Experience Lowcountry's coldest scoops." />
+<!-- End SEO Meta Tags -->
+
+<script data-gate>
+(function(){
+  var slug='fBaCQRGV';var apiBase='https://paymegpt.com';var currency='USD';var presets=[2500,5000,10000,25000];var minAmt=100;var maxAmt=1000000;var thankYouMsg='Thank you for your generous donation!';
+  function fmtD(c){return new Intl.NumberFormat('en-US',{style:'currency',currency:currency}).format(c/100);}
+  window.__processDonation=function(amountCents,email,donorName,donorMessage){
+    if(!amountCents||amountCents<minAmt){alert('Minimum donation is '+fmtD(minAmt));return Promise.reject('below_min');}
+    if(amountCents>maxAmt){alert('Maximum donation is '+fmtD(maxAmt));return Promise.reject('above_max');}
+    if(!email){alert('Please enter your email address.');return Promise.reject('no_email');}
+    var successBase=window.location.href.split('?')[0];
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/donation/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email,name:donorName||'',amountCents:amountCents,message:donorMessage||'',successUrl:successBase+'?donation=success&email='+encodeURIComponent(email)+'&session_id={CHECKOUT_SESSION_ID}',cancelUrl:successBase+'?donation=cancelled'})
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process donation');throw new Error(d.error);}
+    });
+  };
+  window.__donationConfig={currency:currency,presets:presets,minAmount:minAmt,maxAmount:maxAmt,formatAmount:fmtD};
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('donation')==='success'){
+      var overlay=document.createElement('div');overlay.id='donation-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">'+thankYouMsg+'</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">Your donation has been processed successfully.</p><button onclick="this.closest(\'#donation-success-overlay\').remove();window.history.replaceState({},\'\',window.location.pathname);" style="padding:12px 32px;font-size:16px;font-weight:600;background:#16a34a;color:white;border:none;border-radius:8px;cursor:pointer;">Continue</button></div>';
+      document.body.appendChild(overlay);
+    }
+  });
+})();
+</script>
+<script data-field-replace>
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var fields={};
+  var paramMap={
+    'first_name':'firstName','last_name':'lastName','full_name':'fullName',
+    'email':'email','phone':'phone','company':'company',
+    'city':'city','state':'state','country':'country'
+  };
+  var skipTags={'SCRIPT':1,'STYLE':1,'NOSCRIPT':1,'TEXTAREA':1,'CODE':1,'PRE':1};
+  var hasUrlFields=false;
+  for(var p in paramMap){
+    var v=params.get(p);
+    if(v){fields[paramMap[p]]=v;hasUrlFields=true;}
+  }
+  var contactId=params.get('contact_id');
+  function esc(s){
+    if(!s)return s;
+    var d=document.createElement('div');
+    d.appendChild(document.createTextNode(s));
+    return d.innerHTML;
+  }
+  function doReplace(data){
+    var r={};
+    r['{{full_name}}']=esc(((data.firstName||'')+' '+(data.lastName||'')).trim()||((data.fullName||data.name)||''));
+    r['{{first_name}}']=esc(data.firstName||(data.name?data.name.split(' ')[0]:'')||'');
+    r['{{last_name}}']=esc(data.lastName||(data.name&&data.name.indexOf(' ')>-1?data.name.substring(data.name.indexOf(' ')+1):'')||'');
+    r['{{email}}']=esc(data.email||'');
+    r['{{phone}}']=esc(data.phone||'');
+    r['{{company}}']=esc(data.company||'');
+    r['{{city}}']=esc(data.city||'');
+    r['{{state}}']=esc(data.state||'');
+    r['{{country}}']=esc(data.country||'');
+    r['{{date}}']=new Date().toLocaleDateString();
+    r['{{time}}']=new Date().toLocaleTimeString();
+    r['{{location}}']=[data.city,data.state,data.country].filter(Boolean).join(', ');
+    r['{{tracking_id}}']=esc(data.trackingId||'');
+    r['{{lastClickedProduct}}']=esc(data.lastClickedProduct||'');
+    r['{{lastProductClickDate}}']=esc(data.lastProductClickDate||'');
+    r['{{lastClickedProductPrice}}']=esc(data.lastClickedProductPrice||'');
+    r['{{lastClickedProductURL}}']=esc(data.lastClickedProductURL||'');
+    r['{{productsClickedCount}}']=esc(data.productsClickedCount||'0');
+    r['{{ip_address}}']=esc(data.ipAddress||'');
+    r['{{ip}}']=esc(data.ipAddress||'');
+    if(data.customFields){
+      for(var k in data.customFields){
+        r['{{'+k+'}}']=esc(String(data.customFields[k]||''));
+      }
+    }
+    params.forEach(function(v,k){
+      if(!paramMap[k]&&k!=='contact_id'&&k!=='page_id'&&k.indexOf('utm_')!==0){
+        r['{{'+k+'}}']=esc(v);
+      }
+    });
+    var hasValues=false;
+    for(var key in r){if(r[key]){hasValues=true;break;}}
+    if(!hasValues)return;
+    var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+      acceptNode:function(n){
+        var p=n.parentNode;
+        if(p&&skipTags[p.nodeName])return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var node;
+    while(node=walker.nextNode()){
+      var txt=node.nodeValue;
+      if(txt&&txt.indexOf('{{')>-1){
+        var changed=txt;
+        for(var ph in r){
+          if(r[ph]&&changed.indexOf(ph)>-1){
+            changed=changed.split(ph).join(r[ph]);
+          }
+        }
+        if(changed!==txt)node.nodeValue=changed;
+      }
+    }
+    var attrs=['value','placeholder','content','alt','title'];
+    attrs.forEach(function(attr){
+      var els=document.querySelectorAll('['+attr+'*="{{"]');
+      for(var i=0;i<els.length;i++){
+        var tag=els[i].tagName;
+        if(skipTags[tag])continue;
+        var val=els[i].getAttribute(attr);
+        if(val){
+          var nv=val;
+          for(var ph in r){
+            if(r[ph]&&nv.indexOf(ph)>-1){
+              nv=nv.split(ph).join(r[ph]);
+            }
+          }
+          if(nv!==val)els[i].setAttribute(attr,nv);
+        }
+      }
+    });
+  }
+  function run(){
+    if(contactId){
+      var xhr=new XMLHttpRequest();
+      xhr.open('GET','https://paymegpt.com/api/landing/context/'+encodeURIComponent(contactId)+'?page_id=2682');
+      xhr.onload=function(){
+        if(xhr.status===200){
+          try{
+            var resp=JSON.parse(xhr.responseText);
+            if(resp.success&&resp.contact){
+              var merged=resp.contact;
+              for(var k in fields){merged[k]=fields[k];}
+              doReplace(merged);
+              return;
+            }
+          }catch(e){}
+        }
+        if(hasUrlFields)doReplace(fields);
+      };
+      xhr.onerror=function(){if(hasUrlFields)doReplace(fields);};
+      xhr.send();
+    }else if(hasUrlFields){
+      doReplace(fields);
+    }
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}
+  else{run();}
+})();
+</script>
+<script data-payment>
+(function(){
+  var slug='fBaCQRGV';
+  var apiBase='https://paymegpt.com';
+  function findEmail(){
+    var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.includes('@'))return el.value.trim();}
+    var inputs=document.querySelectorAll('input[type="email"],input[name*="email"],input[placeholder*="email"],input[placeholder*="Email"]');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.includes('@'))return inputs[j].value.trim();}
+    return '';
+  }
+  function findName(){
+    var ids=['name','fullName','full-name','buyer-name','buyerName','customer-name','userName','user-name'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value)return el.value.trim();}
+    var inputs=document.querySelectorAll('input[name*="name"]:not([name*="email"]):not([type="email"]),input[placeholder*="name"]:not([placeholder*="email"]):not([type="email"]),input[placeholder*="Name"]:not([type="email"])');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value)return inputs[j].value.trim();}
+    return '';
+  }
+  var __realProcessPayment=function(a,b,c,d,e){
+    var amountCents,email,productName,productDescription,customerName,quantity;
+    if(a&&typeof a==='object'){
+      amountCents=a.amountCents;email=a.email;productName=a.productName;
+      productDescription=a.productDescription||'';customerName=a.name||'';quantity=a.quantity||1;
+    }else{
+      amountCents=typeof a==='number'?a:0;productName=typeof b==='string'?b:'';
+      productDescription=typeof c==='string'?c:'';email='';customerName='';quantity=1;
+    }
+    if(!email)email=findEmail();
+    if(!customerName)customerName=findName();
+    if(!productName){alert('Product name is required.');return Promise.reject('no_product_name');}
+    if(!amountCents||amountCents<100){alert('Amount must be at least $1.00');return Promise.reject('invalid_amount');}
+    if(!email){alert('Please enter your email address.');return Promise.reject('no_email');}
+    var successBase=window.location.href.split('?')[0];
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/payment/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email,name:customerName,amountCents:amountCents,productName:productName,productDescription:productDescription,quantity:quantity,successUrl:successBase+'?payment=success&product='+encodeURIComponent(productName)+'&session_id={CHECKOUT_SESSION_ID}',cancelUrl:successBase+'?payment=cancelled'})
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process payment');throw new Error(d.error);}
+    });
+  };
+  Object.defineProperty(window,'__processPayment',{value:__realProcessPayment,writable:false,configurable:false});
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('payment')==='success'){
+      var pName=urlParams.get('product')||'your item';
+      var overlay=document.createElement('div');overlay.id='payment-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">Payment Successful!</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">Thank you for purchasing '+pName.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'.</p><button onclick="document.getElementById(\'payment-success-overlay\').remove();window.history.replaceState({},\'\',window.location.pathname);" style="padding:12px 32px;font-size:16px;font-weight:600;background:#16a34a;color:white;border:none;border-radius:8px;cursor:pointer;">Continue</button></div>';
+      document.body.appendChild(overlay);
+    }
+  });
+})();
+</script></head>
+<body class="bg-gangster-black text-white font-sans overflow-x-hidden">
+    <!-- Sticky Header -->
+    <header class="fixed top-0 w-full z-50 bg-gangster-black/95 backdrop-blur-xl border-b border-gold-drip/30 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center space-x-2 group">
+                <div class="w-12 h-12 bg-gradient-to-br from-gold-drip to-chrome rounded-full flex items-center justify-center shadow-2xl shadow-gold-drip/25 group-hover:animate-drip-gold">
+                    <i class="fas fa-crown text-gangster-black text-xl font-bold"></i>
+                </div>
+                <span class="text-2xl md:text-3xl font-blackhan tracking-widest bg-gradient-to-r from-gold-drip to-chrome bg-clip-text text-transparent drop-shadow-2xl">RYAN'S</span>
+                <span class="text-xl font-bebas tracking-widest text-cream-pop">ICE CREAM</span>
+            </a>
+            
+            <!-- Nav Links -->
+            <ul class="hidden md:flex space-x-8 text-lg font-bold">
+                <li><a href="#home" class="hover:text-gold-drip transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-drip after:transition-all after:duration-300 hover:after:w-full">HOME</a></li>
+                <li><a href="#menu" class="hover:text-gold-drip transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-drip after:transition-all after:duration-300 hover:after:w-full">MENU</a></li>
+                <li><a href="#order" class="hover:text-gold-drip transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-drip after:transition-all after:duration-300 hover:after:w-full">ORDER ONLINE</a></li>
+                <li><a href="#catering" class="hover:text-gold-drip transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-drip after:transition-all after:duration-300 hover:after:w-full">CATERING</a></li>
+                <li><a href="#about" class="hover:text-gold-drip transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-drip after:transition-all after:duration-300 hover:after:w-full">ABOUT</a></li>
+                <li><a href="#contact" class="hover:text-gold-drip transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-drip after:transition-all after:duration-300 hover:after:w-full">CONTACT</a></li>
+            </ul>
+            
+            <!-- CTA Button -->
+            <a href="#order" class="bg-gradient-to-r from-gold-drip to-chrome text-gangster-black font-bold px-8 py-3 rounded-full text-lg hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-1 transition-all duration-300 uppercase tracking-wider">ORDER NOW</a>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden p-2">
+                <i class="fas fa-bars text-2xl text-gold-drip"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen pt-24 relative overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute inset-0 bg-gradient-to-b from-gangster-black via-gangster-black/80 to-transparent"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(212,175,55,0.1)_0%,transparent_50%)]"></div>
+        
+        <!-- Floating Ice Cream Scoops -->
+        <div class="absolute top-1/4 left-10 w-32 h-32 bg-cream-pop rounded-full animate-float-scoop shadow-2xl shadow-gold-drip/30"></div>
+        <div class="absolute top-1/2 right-20 w-24 h-24 bg-gradient-to-br from-cream-pop to-yellow-300 rounded-full animate-float-scoop delay-1000 shadow-2xl shadow-gold-drip/20"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-28 h-28 bg-gradient-to-br from-purple-300 to-pink-300 rounded-full animate-float-scoop delay-2000 shadow-2xl shadow-gold-drip/25"></div>
+        
+        <!-- Smoke Effect -->
+        <div class="absolute top-0 left-0 w-full h-full animate-smoke bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+        
+        <div class="container mx-auto px-6 h-full flex flex-col justify-center items-center text-center relative z-10 py-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="inline-block px-8 py-4 bg-gangster-black/80 backdrop-blur-xl rounded-3xl border border-gold-drip/30 mb-8">
+                    <div class="text-6xl md:text-8xl xl:text-9xl font-blackhan uppercase tracking-tightest leading-none bg-gradient-to-r from-gold-drip via-yellow-400 to-chrome bg-clip-text text-transparent drop-shadow-4xl animate-pulse">
+                        THE COLDEST SCOOP
+                    </div>
+                    <div class="text-4xl md:text-6xl xl:text-7xl font-bebas uppercase tracking-widest text-cream-pop mt-4 drop-shadow-2xl">
+                        IN BLUFFTON
+                    </div>
+                </div>
+                <p class="text-xl md:text-2xl font-bold text-chrome mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-lg">
+                    Lowcountry's Most Dripped-Out Ice Cream Experience
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <a href="#order" class="bg-gradient-to-r from-gold-drip to-chrome text-gangster-black font-bold px-12 py-6 rounded-full text-xl hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-2 transition-all duration-500 uppercase tracking-widest w-full sm:w-auto text-center">ORDER ONLINE</a>
+                    <a href="#menu" class="border-4 border-gold-drip text-gold-drip font-bold px-12 py-6 rounded-full text-xl hover:bg-gold-drip hover:text-gangster-black transform hover:-translate-y-2 transition-all duration-500 uppercase tracking-widest w-full sm:w-auto text-center">VIEW MENU</a>
+                </div>
+                <div class="mt-16 p-6 bg-gangster-black/50 backdrop-blur-xl rounded-2xl border border-chrome/30 max-w-md mx-auto">
+                    <div class="text-2xl mb-2">📍 Bluffton, SC</div>
+                    <div class="text-gold-drip font-bold text-xl">Lowcountry's Finest</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Flavors -->
+    <section id="menu" class="py-32 bg-gangster-black relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-24">
+                <h2 class="text-7xl md:text-8xl xl:text-9xl font-blackhan uppercase tracking-tightest bg-gradient-to-r from-gold-drip to-chrome bg-clip-text text-transparent drop-shadow-4xl mb-8">THE</h2>
+                <h2 class="text-7xl md:text-8xl xl:text-9xl font-blackhan uppercase tracking-tightest text-cream-pop drop-shadow-4xl">LINEUP</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- Gold Rush -->
+                <div class="group relative bg-gradient-to-b from-[#1a1a1a] to-gangster-black rounded-3xl p-8 border-2 border-gold-drip/20 hover:border-gold-drip/80 hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-4 transition-all duration-500 overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-gold-drip to-yellow-400 rounded-bl-full opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                    <div class="text-4xl mb-6 text-cream-pop animate-pulse">🍦</div>
+                    <h3 class="text-3xl font-blackhan uppercase tracking-wider text-gold-drip mb-4 group-hover:scale-105 transition-transform">GOLD RUSH</h3>
+                    <p class="text-chrome mb-6 font-bold">Salted Caramel Swirl</p>
+                    <div class="text-2xl font-bebas text-gold-drip mb-8">$7.99</div>
+                    <button onclick="addToCart('Gold Rush', 799)" class="w-full bg-gradient-to-r from-gold-drip to-chrome text-gangster-black font-bold py-4 rounded-xl text-lg uppercase tracking-wider hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-1 group-hover:animate-glow-pulse transition-all duration-300">ADD TO CART</button>
+                </div>
+
+                <!-- Trap Garden -->
+                <div class="group relative bg-gradient-to-b from-[#1a1a1a] to-gangster-black rounded-3xl p-8 border-2 border-gold-drip/20 hover:border-gold-drip/80 hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-4 transition-all duration-500 overflow-hidden">
+                    <div class="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-pink-400 to-red-400 rounded-br-full opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                    <div class="text-4xl mb-6 text-cream-pop animate-pulse">🍓</div>
+                    <h3 class="text-3xl font-blackhan uppercase tracking-wider text-gold-drip mb-4 group-hover:scale-105 transition-transform">TRAP GARDEN</h3>
+                    <p class="text-chrome mb-6 font-bold">Strawberry Basil</p>
+                    <div class="text-2xl font-bebas text-gold-drip mb-8">$7.99</div>
+                    <button onclick="addToCart('Trap Garden', 799)" class="w-full bg-gradient-to-r from-gold-drip to-chrome text-gangster-black font-bold py-4 rounded-xl text-lg uppercase tracking-wider hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-1 group-hover:animate-glow-pulse transition-all duration-300">ADD TO CART</button>
+                </div>
+
+                <!-- Lowcountry Mud -->
+                <div class="group relative bg-gradient-to-b from-[#1a1a1a] to-gangster-black rounded-3xl p-8 border-2 border-gold-drip/20 hover:border-gold-drip/80 hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-4 transition-all duration-500 overflow-hidden">
+                    <div class="absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-br from-yellow-800 to-brown-800 rounded-full opacity-10 group-hover:opacity-30 transition-opacity"></div>
+                    <div class="text-4xl mb-6 text-cream-pop animate-pulse">🍫</div>
+                    <h3 class="text-3xl font-blackhan uppercase tracking-wider text-gold-drip mb-4 group-hover:scale-105 transition-transform">LOWCOUNTRY MUD</h3>
+                    <p class="text-chrome mb-6 font-bold">Chocolate Pecan Praline</p>
+                    <div class="text-2xl font-bebas text-gold-drip mb-8">$8.99</div>
+                    <button onclick="addToCart('Lowcountry Mud', 899)" class="w-full bg-gradient-to-r from-gold-drip to-chrome text-gangster-black font-bold py-4 rounded-xl text-lg uppercase tracking-wider hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-1 group-hover:animate-glow-pulse transition-all duration-300">ADD TO CART</button>
+                </div>
+
+                <!-- Ice Ice Baby -->
+                <div class="group relative bg-gradient-to-b from-[#1a1a1a] to-gangster-black rounded-3xl p-8 border-2 border-gold-drip/20 hover:border-gold-drip/80 hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-4 transition-all duration-500 overflow-hidden">
+                    <div class="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-blue-400 to-purple-400 rounded-tl-full opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                    <div class="text-4xl mb-6 text-cream-pop animate-pulse">🫐</div>
+                    <h3 class="text-3xl font-blackhan uppercase tracking-wider text-gold-drip mb-4 group-hover:scale-105 transition-transform">ICE ICE BABY</h3>
+                    <p class="text-chrome mb-6 font-bold">Blue Raspberry Vanilla Bean</p>
+                    <div class="text-2xl font-bebas text-gold-drip mb-8">$7.99</div>
+                    <button onclick="addToCart('Ice Ice Baby', 799)" class="w-full bg-gradient-to-r from-gold-drip to-chrome text-gangster-black font-bold py-4 rounded-xl text-lg uppercase tracking-wider hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-1 group-hover:animate-glow-pulse transition-all duration-300">ADD TO CART</button>
+                </div>
+
+                <!-- OG Vanilla -->
+                <div class="group relative bg-gradient-to-b from-[#1a1a1a] to-gangster-black rounded-3xl p-8 border-2 border-gold-drip/20 hover:border-gold-drip/80 hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-4 transition-all duration-500 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cream-pop/10 to-transparent opacity-30 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="text-4xl mb-6 text-cream-pop animate-pulse relative z-10">🍦</div>
+                    <h3 class="text-3xl font-blackhan uppercase tracking-wider text-gold-drip mb-4 group-hover:scale-105 transition-transform relative z-10">OG VANILLA</h3>
+                    <p class="text-chrome mb-6 font-bold relative z-10">Madagascar Bourbon Vanilla</p>
+                    <div class="text-2xl font-bebas text-gold-drip mb-8 relative z-10">$6.99</div>
+                    <button onclick="addToCart('OG Vanilla', 699)" class="w-full bg-gradient-to-r from-gold-drip to-chrome text-gangster-black font-bold py-4 rounded-xl text-lg uppercase tracking-wider hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-1 group-hover:animate-glow-pulse transition-all duration-300 relative z-10">ADD TO CART</button>
+                </div>
+
+                <!-- Bluffton Sunset -->
+                <div class="group relative bg-gradient-to-b from-[#1a1a1a] to-gangster-black rounded-3xl p-8 border-2 border-gold-drip/20 hover:border-gold-drip/80 hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-4 transition-all duration-500 overflow-hidden">
+                    <div class="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-orange-400 to-pink-400 rounded-br-full opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                    <div class="text-4xl mb-6 text-cream-pop animate-pulse">🍑</div>
+                    <h3 class="text-3xl font-blackhan uppercase tracking-wider text-gold-drip mb-4 group-hover:scale-105 transition-transform">BLUFFTON SUNSET</h3>
+                    <p class="text-chrome mb-6 font-bold">Peach Mango Sorbet</p>
+                    <div class="text-2xl font-bebas text-gold-drip mb-8">$8.99</div>
+                    <button onclick="addToCart('Bluffton Sunset', 899)" class="w-full bg-gradient-to-r from-gold-drip to-chrome text-gangster-black font-bold py-4 rounded-xl text-lg uppercase tracking-wider hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-1 group-hover:animate-glow-pulse transition-all duration-300">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Ordering -->
+    <section id="order" class="py-32 relative bg-gradient-to-b from-gangster-black to-[#1a1a1a]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-24">
+                <h2 class="text-6xl md:text-8xl font-blackhan uppercase tracking-tightest bg-gradient-to-r from-gold-drip to-chrome bg-clip-text text-transparent drop-shadow-4xl">ORDER ONLINE</h2>
+                <p class="text-2xl md:text-3xl text-gold-drip font-bebas uppercase tracking-widest mt-4 drop-shadow-xl">WE DELIVER</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Order Info -->
+                <div>
+                    <div class="bg-gangster-black/50 backdrop-blur-xl rounded-3xl p-12 border-2 border-gold-drip/20">
+                        <h3 class="text-3xl font-blackhan uppercase tracking-wider text-gold-drip mb-8">SERVING ALL OF</h3>
+                        <div class="text-5xl font-bold text-cream-pop mb-12">BLUFFTON • HILTON HEAD • SUN CITY</div>
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4 p-4 bg-chrome/10 rounded-xl">
+                                <div class="w-12 h-12 bg-gold-drip rounded-full flex items-center justify-center">
+                                    <i class="fas fa-truck text-gangster-black text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">FREE DELIVERY</h4>
+                                    <p class="text-chrome">Orders over $25</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4 p-4 bg-chrome/10 rounded-xl">
+                                <div class="w-12 h-12 bg-gold-drip rounded-full flex items-center justify-center">
+                                    <i class="fas fa-clock text-gangster-black text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">30 MIN DELIVERY</h4>
+                                    <p class="text-chrome">Lightning fast service</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Checkout Mockup -->
+                <div class="bg-gradient-to-b from-[#1a1a1a] to-gangster-black rounded-3xl p-12 border-2 border-gold-drip/30 shadow-2xl shadow-gold-drip/20">
+                    <h3 class="text-3xl font-blackhan uppercase text-gold-drip mb-8 tracking-wider text-center">CHECKOUT</h3>
+                    <div id="cart-items" class="space-y-4 mb-8 max-h-64 overflow-y-auto">
+                        <!-- Cart items will appear here -->
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex justify-between text-xl font-bold">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="flex space-x-4 mb-6">
+                            <button id="pickup-btn" class="flex-1 bg-green-600/20 hover:bg-green-600/40 border border-green-600/50 text-green-300 py-3 rounded-xl font-bold uppercase tracking-wider transition-all duration-300">PICKUP</button>
+                            <button id="delivery-btn" class="flex-1 bg-blue-600/20 hover:bg-blue-600/40 border border-blue-600/50 text-blue-300 py-3 rounded-xl font-bold uppercase tracking-wider transition-all duration-300">DELIVERY</button>
+                        </div>
+                    </div>
+                    <div class="bg-gangster-black/50 p-6 rounded-2xl border border-chrome/30 mb-8">
+                        <p class="text-chrome text-center mb-4">Full e-commerce coming soon</p>
+                        <div class="flex gap-4">
+                            <input id="notify-email" type="email" placeholder="Enter email for launch alerts" class="flex-1 bg-transparent border border-chrome/50 px-4 py-3 rounded-xl text-white placeholder-chrome/70 focus:border-gold-drip focus:outline-none transition-all">
+                            <button onclick="notifyLaunch()" class="bg-gold-drip text-gangster-black px-8 py-3 rounded-xl font-bold uppercase tracking-wider hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-1 transition-all">GET NOTIFIED</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering -->
+    <section id="catering" class="py-32 bg-gangster-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-24">
+                <h2 class="text-6xl md:text-8xl font-blackhan uppercase tracking-tightest bg-gradient-to-r from-gold-drip to-chrome bg-clip-text text-transparent drop-shadow-4xl mb-6">BOOK</h2>
+                <h2 class="text-6xl md:text-8xl font-blackhan uppercase tracking-tightest text-cream-pop drop-shadow-4xl mb-4">THE</h2>
+                <h2 class="text-6xl md:text-8xl font-blackhan uppercase tracking-tightest bg-gradient-to-r from-gold-drip to-chrome bg-clip-text text-transparent drop-shadow-4xl">CART</h2>
+            </div>
+            
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <p class="text-xl md:text-2xl text-chrome font-bold max-w-3xl mx-auto leading-relaxed mb-12">Ice cream cart catering for events, parties & corporate — Lowcountry's coldest experience on wheels</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- The Scoop -->
+                <div class="group relative bg-gradient-to-b from-[#1a1a1a] to-gangster-black rounded-3xl p-10 border-2 border-gold-drip/20 hover:border-gold-drip hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-4 transition-all duration-500 h-full">
+                    <div class="absolute top-6 right-6 text-4xl">🍦</div>
+                    <h3 class="text-4xl font-blackhan uppercase text-gold-drip mb-8 relative z-10">THE SCOOP</h3>
+                    <div class="text-4xl font-bebas text-cream-pop mb-8">$299</div>
+                    <ul class="space-y-4 mb-12 text-left text-chrome font-bold relative z-10">
+                        <li class="flex items-center"><i class="fas fa-check text-gold-drip mr-4"></i>100 servings</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold-drip mr-4"></i>3 premium flavors</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold-drip mr-4"></i>2 hours service</li>
+                    </ul>
+                    <button onclick="bookCatering('The Scoop', 29900)" class="w-full bg-gradient-to-r from-gold-drip to-chrome text-gangster-black font-bold py-4 rounded-xl text-xl uppercase tracking-wider hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-1 transition-all">BOOK NOW</button>
+                </div>
+
+                <!-- The Drip -->
+                <div class="group relative bg-gradient-to-b from-[#1a1a1a] to-gangster-black rounded-3xl p-10 border-4 border-gold-drip/50 hover:border-gold-drip hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-6 transition-all duration-500 h-full">
+                    <div class="absolute top-6 right-6 text-4xl animate-drip-gold">🍦</div>
+                    <h3 class="text-4xl font-blackhan uppercase bg-gradient-to-r from-gold-drip to-chrome bg-clip-text text-transparent mb-8 relative z-10">THE DRIP</h3>
+                    <div class="text-4xl font-bebas text-cream-pop mb-8">$599</div>
+                    <ul class="space-y-4 mb-12 text-left text-chrome font-bold relative z-10">
+                        <li class="flex items-center"><i class="fas fa-check text-gold-drip mr-4"></i>250 servings</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold-drip mr-4"></i>6 premium flavors</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold-drip mr-4"></i>4 hours service</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold-drip mr-4"></i>Custom branding</li>
+                    </ul>
+                    <button onclick="bookCatering('The Drip', 59900)" class="w-full bg-gradient-to-r from-gold-drip to-chrome text-gangster-black font-bold py-4 rounded-xl text-xl uppercase tracking-wider hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-1 transition-all">BOOK NOW</button>
+                </div>
+
+                <!-- The Empire -->
+                <div class="group relative bg-gradient-to-b from-[#1a1a1a] to-gangster-black rounded-3xl p-10 border-2 border-gold-drip/20 hover:border-gold-drip hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-4 transition-all duration-500 h-full">
+                    <div class="absolute top-6 right-6 text-4xl animate-pulse">👑🍦</div>
+                    <h3 class="text-4xl font-blackhan uppercase text-gold-drip mb-8 relative z-10">THE EMPIRE</h3>
+                    <div class="text-4xl font-bebas text-gold-drip mb-2 relative z-10">$999+</div>
+                    <div class="text-xl text-chrome relative z-10">Custom</div>
+                    <ul class="space-y-4 mb-12 text-left text-chrome font-bold relative z-10">
+                        <li class="flex items-center"><i class="fas fa-check text-gold-drip mr-4"></i>500+ servings</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold-drip mr-4"></i>Unlimited flavors</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold-drip mr-4"></i>8+ hours service</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold-drip mr-4"></i>Full customization</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold-drip mr-4"></i>VIP setup</li>
+                    </ul>
+                    <button onclick="bookCatering('The Empire', 99900)" class="w-full bg-gradient-to-r from-gold-drip to-chrome text-gangster-black font-bold py-4 rounded-xl text-xl uppercase tracking-wider hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-1 transition-all">BOOK NOW</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-32 bg-gradient-to-b from-gangster-black to-[#1a1a1a] relative">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-6xl md:text-8xl font-blackhan uppercase tracking-tightest text-cream-pop drop-shadow-4xl mb-12">WE AIN'T</h2>
+                <h2 class="text-6xl md:text-8xl font-blackhan uppercase tracking-tightest bg-gradient-to-r from-gold-drip to-chrome bg-clip-text text-transparent drop-shadow-4xl mb-16">PLAYIN' AROUND</h2>
+                
+                <div class="bg-gangster-black/50 backdrop-blur-xl rounded-3xl p-16 border-2 border-gold-drip/20 mb-16">
+                    <p class="text-xl md:text-2xl text-chrome font-bold leading-relaxed max-w-4xl mx-auto mb-16">
+                        Ryan's Ice Cream Shop brings handcrafted, premium ice cream to the Lowcountry. 
+                        Born and built in Bluffton, SC — we use local ingredients, bold flavors, 
+                        and zero compromises. Every scoop is a statement.
+                    </p>
+                </div>
+                
+                <!-- Stats -->
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="group p-8">
+                        <div class="text-5xl font-blackhan text-gold-drip mb-4 group-hover:animate-drip-gold">20+</div>
+                        <div class="text-xl font-bold text-chrome uppercase tracking-wider">Flavors</div>
+                    </div>
+                    <div class="group p-8">
+                        <div class="text-5xl font-blackhan text-gold-drip mb-4">5⭐</div>
+                        <div class="text-xl font-bold text-chrome uppercase tracking-wider">Rated</div>
+                    </div>
+                    <div class="group p-8">
+                        <div class="text-5xl font-blackhan text-gold-drip mb-4 group-hover:animate-glow-pulse">100%</div>
+                        <div class="text-xl font-bold text-chrome uppercase tracking-wider">Locally Owned</div>
+                    </div>
+                    <div class="group p-8">
+                        <div class="text-5xl font-blackhan text-gold-drip mb-4">👑</div>
+                        <div class="text-xl font-bold text-chrome uppercase tracking-wider">Bluffton Born</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-32 bg-gangster-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-6xl md:text-8xl font-blackhan uppercase tracking-tightest bg-gradient-to-r from-gold-drip to-chrome bg-clip-text text-transparent drop-shadow-4xl">WHAT THEY</h2>
+                <h2 class="text-6xl md:text-8xl font-blackhan uppercase tracking-tightest text-cream-pop drop-shadow-4xl mt-4">SAYIN'</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-gradient-to-b from-[#1a1a1a] to-gangster-black rounded-3xl p-10 border border-gold-drip/30 hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-4 transition-all duration-500">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="text-4xl mr-4">⭐⭐⭐⭐⭐</div>
+                        <div class="w-16 h-16 bg-gradient-to-br from-gold-drip to-chrome rounded-full flex items-center justify-center text-2xl font-bold text-gangster-black">JC</div>
+                    </div>
+                    <p class="text-xl font-bold text-chrome italic leading-relaxed mb-8">"Gold Rush is straight FIRE 🔥 Best ice cream I've had in years. Lowcountry needed this level of drip."</p>
+                    <div class="flex items-center justify-center space-x-1 text-gold-drip text-2xl">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-b from-[#1a1a1a] to-gangster-black rounded-3xl p-10 border border-gold-drip/30 hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-4 transition-all duration-500">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="text-4xl mr-4">⭐⭐⭐⭐⭐</div>
+                        <div class="w-16 h-16 bg-gradient-to-br from-gold-drip to-chrome rounded-full flex items-center justify-center text-2xl font-bold text-gangster-black">MIA</div>
+                    </div>
+                    <p class="text-xl font-bold text-chrome italic leading-relaxed mb-8">"Trap Garden changed my life. Never had strawberry basil like this. Ryan's is the move every time."</p>
+                    <div class="flex items-center justify-center space-x-1 text-gold-drip text-2xl">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-b from-[#1a1a1a] to-gangster-black rounded-3xl p-10 border border-gold-drip/30 hover:shadow-2xl hover:shadow-gold-drip/50 transform hover:-translate-y-4 transition-all duration-500">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="text-4xl mr-4">⭐⭐⭐⭐⭐</div>
+                        <div class="w-16 h-16 bg-gradient-to-br from-gold-drip to-chrome rounded-full flex items-center justify-center text-2xl font-bold text-gangster-black">Dre</div>
+                    </div>
+                    <p class="text-xl font-bold text-chrome italic leading-relaxed mb-8">"Lowcountry Mud goes dummy hard. Corporate catering was flawless. These guys don't play."</p>
+                    <div class="flex items-center justify-center space-x-1 text-gold-drip text-2xl">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-32 bg-gradient-to-t from-gangster-black to-[#1a1a1a]">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-6xl md:text-8xl font-blackhan uppercase tracking-tightest bg-gradient-to-r from-gold-drip to-chrome bg-clip-text text-transparent drop-shadow-4xl mb-8">GET</h2>
+                <h2 class="text-6xl md:text-8xl font-blackhan uppercase tracking-tightest text-cream-pop drop-shadow-4xl mb-12">CONTACT</h2>
+                <div class="bg-gangster-black/50 backdrop-blur-xl rounded-3xl p-12 border-2 border-gold-drip/30">
+                    <p class="text-xl md:text-2xl text-chrome font-bold mb-12 max-w-2xl mx-auto leading-relaxed">
+                        Ready to experience the coldest scoops in the Lowcountry? Hit us up.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-8 text-center mb-12">
+                        <div class="group p-6">
+                            <div class="text-4xl text-gold-drip mb-4 group-hover:animate-bounce">📍</div>
+                            <div class="font-bold text-lg mb-2">Bluffton, SC 29910</div>
+                            <a href="#" class="text-chrome hover:text-gold-drip transition-colors">View Map</a>
+                        </div>
+                        <div class="group p-6">
+                            <div class="text-4xl text-gold-drip mb-4 group-hover:animate-bounce">📱</div>
+                            <div class="font-bold text-lg mb-2">(843) 555-COLD</div>
+                            <a href="tel:8435552653" class="text-chrome hover:text-gold-drip transition-colors">Call Now</a>
+                        </div>
+                        <div class="group p-6">
+                            <div class="text-4xl text-gold-drip mb-4 group-hover:animate-bounce">✉️</div>
+                            <div class="font-bold text-lg mb-2">order@ryansicecream.com</div>
+                            <a href="mailto:order@ryansicecream.com" class="text-chrome hover:text-gold-drip transition-colors">Send Email</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gangster-black/90 border-t border-gold-drip/20 pt-24 pb-12 relative overflow-hidden">
+        <!-- Background Drip Effects -->
+        <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-r from-gold-drip/10 via-transparent to-chrome/10"></div>
+        
+        <div class="container mx-auto px-6">
+            <!-- Logo & Tagline -->
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center space-x-4 mb-8">
+                    <div class="w-16 h-16 bg-gradient-to-br from-gold-drip to-chrome rounded-full flex items-center justify-center shadow-2xl shadow-gold-drip/50">
+                        <i class="fas fa-crown text-gangster-black text-2xl font-bold"></i>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-blackhan bg-gradient-to-r from-gold-drip to-chrome bg-clip-text text-transparent tracking-widest">RYAN'S</div>
+                        <div class="text-2xl font-bebas text-cream-pop">ICE CREAM SHOP</div>
+                    </div>
+                </div>
+                <div class="text-2xl font-bold text-chrome uppercase tracking-widest">The Coldest in the Lowcountry</div>
+            </div>
+            
+            <!-- Links Grid -->
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <h4 class="text-2xl font-blackhan text-gold-drip uppercase tracking-wider mb-6">Menu</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#menu" class="text-chrome hover:text-gold-drip transition-colors block py-1">Featured Flavors</a></li>
+                        <li><a href="#" class="text-chrome hover:text-gold-drip transition-colors block py-1">Sundaes</a></li>
+                        <li><a href="#" class="text-chrome hover:text-gold-drip transition-colors block py-1">Shakes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-blackhan text-gold-drip uppercase tracking-wider mb-6">Order Online</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#order" class="text-chrome hover:text-gold-drip transition-colors block py-1">Delivery</a></li>
+                        <li><a href="#order" class="text-chrome hover:text-gold-drip transition-colors block py-1">Pickup</a></li>
+                        <li><a href="#" class="text-chrome hover:text-gold-drip transition-colors block py-1">Catering</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-blackhan text-gold-drip uppercase tracking-wider mb-6">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-chrome hover:text-gold-drip transition-colors block py-1">About Us</a></li>
+                        <li><a href="#contact" class="text-chrome hover:text-gold-drip transition-colors block py-1">Contact</a></li>
+                        <li><a href="#" class="text-chrome hover:text-gold-drip transition-colors block py-1">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-blackhan text-gold-drip uppercase tracking-wider mb-6">Follow</h4>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a href="#" class="w-12 h-12 bg-chrome/20 hover:bg-gold-drip text-chrome hover:text-gangster-black rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:shadow-lg hover:shadow-gold-drip/50 transform hover:scale-110"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-12 h-12 bg-chrome/20 hover:bg-gold-drip text-chrome hover:text-gangster-black rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:shadow-lg hover:shadow-gold-drip/50 transform hover:scale-110"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="w-12 h-12 bg-chrome/20 hover:bg-gold-drip text-chrome hover:text-gangster-black rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:shadow-lg hover:shadow-gold-drip/50 transform hover:scale-110"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Info -->
+            <div class="border-t border-chrome/20 pt-12 text-center space-y-4">
+                <div class="text-lg font-bold text-chrome">
+                    <span>📍 Bluffton, SC 29910</span>
+                    <span class="mx-8">|</span>
+                    <span>Mon-Sat 11am-10pm, Sun 12pm-9pm</span>
+                </div>
+                <div class="text-gold-drip font-bold text-xl">
+                    © 2026 Ryan's Ice Cream Shop. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    
+  <script src="script.js"></script>
+</body>
+</html>
